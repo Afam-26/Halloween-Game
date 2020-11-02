@@ -11,6 +11,3 @@ button{
     background-color: var(--buttonColor);
 }
 
-#controls{
-    align-content: center;
-}
