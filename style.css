@@ -1,1 +1,16 @@
+:root{
+    --buttonColor: purple 
+}
 
+form{
+    text-align: center;
+}
+
+button{
+    
+    background-color: var(--buttonColor);
+}
+
+#controls{
+    align-content: center;
+}
