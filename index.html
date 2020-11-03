@@ -5,27 +5,38 @@
 <!-- header content -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halloween-Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- main body -->
+<!-- main body container-->
 
 <body>
-  <div id="question-contaniner" class="hide">
+  <div id="question-contaniner">
     <h1 class="time">Total time 30 seconds</h1>
-    <h2>Coding Quiz Challenge</h2>
-    <p id="instru">Try to answer the following code-related questions within the time limit. <br> Keep in mind that incorrect answers will penalize your scoretime <br> by ten seconds!</p>
-    <button id="start-btn" class="start-btn">Start Quiz</button>
+    <p id="instru">Coding Quiz Challenge
+    Try to answer the following code-related questions within the time limit. 
+    <br> Keep in mind that incorrect answers will penalize your scoretime 
+    <br> by ten seconds!</p>   
 
   </div>
+
+<!-- start button -->
+  <div>
+    <button id="start-btn" class="start-btn">Start Quiz</button>
+  </div>
+
+  <!-- Quiz control section -->
+
   <form>
     <div id="quiz" class="hide">
-      <h3 id="quiz-btn"></h3>
-      <button id="btn-1" class="ans"></button>
-      <button id="btn-2" class="ans"></button>
-      <button id="btn-3" class="ans"></button>
+
+      <h2 id="quiz-btn"></h2>
+
+      <button id="btn-1" class="ans"></button>     
+      <button id="btn-2" class="ans"></button>      
+      <button id="btn-3" class="ans"></button>     
       <button id="btn-4" class="ans"></button>
 
     </div>
