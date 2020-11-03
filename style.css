@@ -4,10 +4,13 @@
 
 form{
     text-align: center;
+    display: none;
 }
 
 button{
     
     background-color: var(--buttonColor);
 }
+
+
 
