@@ -14,33 +14,33 @@
 
 <body>
   <div id="question-contaniner">
-    <h1 class="time">Total time 30 seconds</h1>
-    <p id="instru">Coding Quiz Challenge
+    <h1 class="time">Total time 60 seconds</h1>
+
+    <div id="instru">
+    <p>Coding Quiz Challenge
     Try to answer the following code-related questions within the time limit. 
     <br> Keep in mind that incorrect answers will penalize your scoretime 
-    <br> by ten seconds!</p>   
-
-  </div>
-
-<!-- start button -->
-  <div>
+    <br> by ten seconds!
+    </p> 
+    <!-- start button -->
     <button id="start-btn" class="start-btn">Start Quiz</button>
+   
+    </div>
+
   </div>
 
   <!-- Quiz control section -->
+  
+  <div id="quiz">
+    
+    <h2 id="quizFirst"></h2>
+    <button id="btn-1" class="ans"></button>     
+    <button id="btn-2" class="ans"></button>      
+    <button id="btn-3" class="ans"></button>     
+    <button id="btn-4" class="ans"></button>
 
-  <form>
-    <div id="quiz" class="hide">
+  </div>
 
-      <h2 id="quiz-btn"></h2>
-
-      <button id="btn-1" class="ans"></button>     
-      <button id="btn-2" class="ans"></button>      
-      <button id="btn-3" class="ans"></button>     
-      <button id="btn-4" class="ans"></button>
-
-    </div>
-  </form>
 
   <script src="./script.js"></script>
 </body>

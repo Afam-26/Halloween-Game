@@ -4,6 +4,7 @@
 
 body{
     text-align: center;
+    background-color: bisque;
     
 }
 
@@ -12,5 +13,10 @@ button{
     background-color: var(--buttonColor);
 }
 
-
+#quiz{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+   
+}
 

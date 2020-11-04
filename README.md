@@ -1,3 +1,3 @@
 # Halloween-Quiz
 
-for timer = act 08 and 29
+This is a timed quiz game that stores high scores and compare it with other peers. 
