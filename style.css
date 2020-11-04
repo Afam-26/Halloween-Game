@@ -1,10 +1,11 @@
 :root{
-    --buttonColor: purple 
+    --buttonColor: grey
+
 }
 
 body{
     text-align: center;
-    background-color: bisque;
+    background-color:#ece8dc;
     
 }
 
@@ -17,6 +18,7 @@ button{
     display: flex;
     flex-flow: column;
     align-items: center;
+    
    
 }
 

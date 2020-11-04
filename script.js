@@ -92,7 +92,7 @@ function checkAns(event) {
         nextQuestion();
     }
     else{
-        secondsLeft = secondsLeft - 10;
+        secondsLeft = secondsLeft - 5;
         nextQuestion();
     }
     
