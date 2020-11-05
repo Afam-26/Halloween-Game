@@ -4,9 +4,15 @@ This is a timed quizzed game that stores high scores and compares it with other 
 
 ## Screen shot
 
+![Front Page](./assets/hallo)
 
 
-# Link to application
+## Link to application
+
+[Click here for link](https://afam-26.github.io/Halloween-Game/)
+
+## Credit
+
 
 
 

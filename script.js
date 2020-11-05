@@ -3,15 +3,22 @@ var timeEl = document.querySelector(".time");
 var istruEl = document.querySelector("#instru");
 var startBtnEl = document.querySelector("#start-btn");
 var quizEl = document.querySelector("#quiz");
+var hideEl = document.querySelector(".hide");
 var quizFirstEl = document.querySelector("#quizFirst");
 var btnOneEl = document.querySelector("#btn-1");
 var btnTwoEl = document.querySelector("#btn-2");
 var btnThreeEl = document.querySelector("#btn-3");
 var btnFourEl = document.querySelector("#btn-4");
+var hideConEl = document.querySelector("hideCon");
+var highScore = document.querySelector("highScore");
+var score = document.querySelector("score")
+
 
 var currentPosition = 0;
 
 var secondsLeft = 60;
+
+
 
 // Question and answers section in array
 var questions = [
@@ -49,11 +56,19 @@ var questions = [
 ];
 
 // Quiz starting function
+document.getElementById("quiz").style.display = "none";
+document.getElementById("hideCon").style.display = "none";
+document.getElementById("highScore").style.display = "none";
+
 
 startBtnEl.addEventListener("click",startQuiz)
 
+
+
 function startQuiz() {
-    document.getElementById("instru").style.display = "none"
+    document.getElementById("instru").style.display = "none";
+    document.getElementById("quiz").style.display = ""
+   
      var timerInterval = setInterval(function() { 
         timeEl.textContent=secondsLeft;
         secondsLeft--;
@@ -109,6 +124,18 @@ function nextQuestion() {
     btnTwoEl.innerHTML = questions[currentPosition].options[1];
     btnThreeEl.innerHTML = questions[currentPosition].options[2];
     btnFourEl.innerHTML = questions[currentPosition].options[3];
+
+    if(currentPosition === 4){
+        document.getElementById("hideCon").style.display = ""
+        // timeEl.textContent = "";
+        // score.textContent = secondsLeft
+ 
+    }
+
+    if(questionIndex >= questions.length){
+        gameOver();
+    }
+
     
 }
 

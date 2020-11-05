@@ -31,13 +31,31 @@
 
   <!-- Quiz control section -->
   
-  <div id="quiz">
+  <div id="quiz" class="hide">
     
     <h2 id="quizFirst"></h2>
     <button id="btn-1" class="ans"></button>     
     <button id="btn-2" class="ans"></button>      
     <button id="btn-3" class="ans"></button>     
     <button id="btn-4" class="ans"></button>
+
+  </div>
+
+  <div id="hideCon" class="controls">    
+    <h3>All Done!</h3>
+      <h3 id="score"></h3>               
+    <label>Enter Initials</label>
+    <input class="input-field" name="text" name="message"></input>
+
+    <input id="submit-btn" type="submit" value="Submit">      
+   
+  </div>  
+
+  <div id="highScore">
+    <h3>Highscores</h3>
+
+    <button id="go-bk" class="next-btn hide">Go back</button>
+    <button id="clear-hgh" class="clear-hgh hide">Clear Highscore</button>
 
   </div>
 
