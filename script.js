@@ -11,12 +11,17 @@ var btnThreeEl = document.querySelector("#btn-3");
 var btnFourEl = document.querySelector("#btn-4");
 var hideConEl = document.querySelector("hideCon");
 var highScore = document.querySelector("highScore");
-var score = document.querySelector("score")
-
+var score = document.querySelector("score");
 
 var currentPosition = 0;
 
+
 var secondsLeft = 60;
+
+
+// var time = questions.length * 12;
+// var timerId;
+
 
 
 
@@ -55,13 +60,14 @@ var questions = [
     },
 ];
 
-// Quiz starting function
+
+
 document.getElementById("quiz").style.display = "none";
 document.getElementById("hideCon").style.display = "none";
 document.getElementById("highScore").style.display = "none";
 
-
-startBtnEl.addEventListener("click",startQuiz)
+// Quiz starting function
+startBtnEl.addEventListener("click",startQuiz);
 
 
 
@@ -84,7 +90,7 @@ function startQuiz() {
 
 }
 
-// Section for grabbing first question
+// Section for grabbing questions
 
 quizFirstEl.textContent = questions[0].question;
 btnOneEl.innerHTML = questions[0].options[0];
@@ -107,10 +113,11 @@ function checkAns(event) {
         nextQuestion();
     }
     else{
-        secondsLeft = secondsLeft - 5;
+        secondsLeft = secondsLeft - 10;
         nextQuestion();
     }
-    
+
+        
 }
 
 
@@ -119,25 +126,35 @@ function checkAns(event) {
 function nextQuestion() {
     currentPosition++;
 
-    quizFirstEl.textContent = questions[currentPosition].question;
-    btnOneEl.innerHTML = questions[currentPosition].options[0];
-    btnTwoEl.innerHTML = questions[currentPosition].options[1];
-    btnThreeEl.innerHTML = questions[currentPosition].options[2];
-    btnFourEl.innerHTML = questions[currentPosition].options[3];
+    if(questions[currentPosition]!== undefined){
+        quizFirstEl.textContent = questions[currentPosition].question;
+        btnOneEl.innerHTML = questions[currentPosition].options[0];
+        btnTwoEl.innerHTML = questions[currentPosition].options[1];
+        btnThreeEl.innerHTML = questions[currentPosition].options[2];
+        btnFourEl.innerHTML = questions[currentPosition].options[3];
+        
+    }else{
+        document.getElementById("highScore").style.display = "block";
 
-    if(currentPosition === 4){
-        document.getElementById("hideCon").style.display = ""
-        // timeEl.textContent = "";
-        // score.textContent = secondsLeft
- 
+        quizEl.style.display = "none"
     }
 
-    if(questionIndex >= questions.length){
-        gameOver();
-    }
 
     
 }
 
 
 
+// function quizEnd() {
+
+    
+//     clearInterval(timerId)
+//     var finalScore = document.getElementById("#highScore");
+//     finalScore.textContent = time 
+
+//    quizEnd()
+    
+// }
+
+
+    
