@@ -13,18 +13,25 @@
 <!-- main body container-->
 
 <body>
-  <div id="question-contaniner">
-    <h1 class="time">Total time 60 seconds</h1>
 
+  <div>
+    <header>
+      <h2 id="show">View Highscore</h2>
+      <h2 id="time">Total time 60 seconds</h2>
+    </header>
+  </div>
+
+  <div id="question-container">
+    
     <div id="instru">
-    <p>Coding Quiz Challenge
-    Try to answer the following code-related questions within the time limit. 
-    <br> Keep in mind that incorrect answers will penalize your scoretime 
-    <br> by ten seconds!
-    </p> 
-    <!-- start button -->
-    <button id="start-btn" class="start-btn">Start Quiz</button>
-   
+      <p>Coding Quiz Challenge
+      Try to answer the following code-related questions within the time limit. 
+      <br> Keep in mind that incorrect answers will penalize your scoretime 
+      <br> by ten seconds!
+      </p> 
+      <!-- start button -->
+      <button id="start-btn" class="start-btn">Start Quiz</button>
+    
     </div>
 
   </div>
@@ -44,24 +51,24 @@
   <!-- Score storage -->
   <div id="hideCon" class="controls">    
     <h3>All Done!</h3>
-      <h3 id="score"></h3>               
-    <label>Enter Initials</label>
-    <input class="input-field" name="text" name="message"></input>
-
-    <input id="submit-btn" type="submit" value="Submit">      
+    <h3>Your final score is <span id="score"></span></h3>
    
+    <form >
+      <input id="userInitials" placeholder="Enter Initials" type="text"></input>
+
+      <input id="submit-btn" type="submit" value="Submit">      
+    </form>
   </div>  
 
   <!-- Highscore display -->
   <div id="highScore">
     <h3>Highscores</h3>
+    <ul id="scores"></ul>
 
     <button id="go-bk" class="next-btn hide">Go back</button>
     <button id="clear-hgh" class="clear-hgh hide">Clear Highscore</button>
 
   </div>
-
-
   <script src="./script.js"></script>
 </body>
 

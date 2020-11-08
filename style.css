@@ -3,24 +3,53 @@
 
 }
 
+/* Body styling  */
 body{
-    text-align: center;
+    
     background-color:#ece8dc;
     
 }
 
-button{
-    
-    background-color: var(--buttonColor);
+/* header section */
+h2 {
+    display: inline;
 }
 
+#time{
+    float: right;
+    margin-right: 30px;
+    
+   
+}
+
+/* Quiz instruction */
+#instru{
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+/* Quiz button */
 #quiz{
     display: flex;
     flex-flow: column;
     align-items: center;
+    text-align: center;
+    margin-top: 50px;
        
-   
+}
+button{    
+    background-color: var(--buttonColor);
+    color: white;
 }
 
+/* High score section */
+#hideCon{
+    text-align: center;
+}
+
+#highScore{
+    text-align: center;
+}
 
 

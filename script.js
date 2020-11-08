@@ -1,5 +1,6 @@
 var questionCon = document.querySelector("#question-container");
-var timeEl = document.querySelector(".time");
+var timeEl = document.querySelector("#time");
+var ShowEl = document.querySelector("#show")
 var istruEl = document.querySelector("#instru");
 var startBtnEl = document.querySelector("#start-btn");
 var quizEl = document.querySelector("#quiz");
@@ -10,18 +11,12 @@ var btnTwoEl = document.querySelector("#btn-2");
 var btnThreeEl = document.querySelector("#btn-3");
 var btnFourEl = document.querySelector("#btn-4");
 var hideConEl = document.querySelector("hideCon");
-var highScore = document.querySelector("highScore");
-var score = document.querySelector("score");
+var highScoreEl = document.querySelector("highScore");
+var submitBtn = document.querySelector("submit-btn")
 
 var currentPosition = 0;
-
-
 var secondsLeft = 60;
-
-
-// var time = questions.length * 12;
-// var timerId;
-
+var display;
 
 
 
@@ -110,10 +105,12 @@ btnFourEl.addEventListener("click", checkAns);
 function checkAns(event) {
     if(event.target.innerHTML === questions[currentPosition].ans)
     {
+        alert("correct!")
         nextQuestion();
     }
     else{
         secondsLeft = secondsLeft - 10;
+        alert("Incorrect!")
         nextQuestion();
     }
 
@@ -134,7 +131,7 @@ function nextQuestion() {
         btnFourEl.innerHTML = questions[currentPosition].options[3];
         
     }else{
-        document.getElementById("highScore").style.display = "block";
+        document.getElementById("hideCon").style.display = "block";
 
         quizEl.style.display = "none"
     }
@@ -144,17 +141,43 @@ function nextQuestion() {
 }
 
 
+// Highscores storage section
 
-// function quizEnd() {
+startBtnEl.addEventListener("submit", function(event){
+    event.preventDefault();
+    var initials = document.querySelector("#userInitials").value;
+    localStorage.setItem(initials, timer);
+    displayScores;
+
+});
+
+
+ShowEl.addEventListener("click", displayScores);
+function displayScores(){
+    document.getElementById("#highscore").style.display = "block";
+    Object.keys(localStorage).forEach(function (key) {
+        console.log(localStorage.getItem(key));
+
+        var li = document.createElement("li");
+        li.textContent = key + "-" + localStorage.getItem(key);
+        document.querySelector("#scores").appendChild(li);
+    });
 
     
-//     clearInterval(timerId)
-//     var finalScore = document.getElementById("#highScore");
-//     finalScore.textContent = time 
+}
 
-//    quizEnd()
+// End Game function
+
+function quizEnd() {
     
-// }
+    clearInterval(timerInterval);
+    console.log("Game Over");
+    var finalScore = document.getElementById("#highScore");
+    finalScore.textContent = time 
+
+   quizEnd()
+    
+}
 
 
     
