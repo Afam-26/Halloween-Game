@@ -5,7 +5,7 @@ This is a timed quizzed game that stores high scores and compares it with other 
 ## Screen shot
 
 ![Front Page](./assets/hallo.PNG)
-
+![Front Screen](./assets/pwd_app)
 
 ## Link to application
 
