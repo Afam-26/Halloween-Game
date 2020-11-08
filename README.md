@@ -4,8 +4,8 @@ This is a timed quizzed game that stores high scores and compares it with other 
 
 ## Screen shot
 
-![Front Page](./assets/hallo.PNG)
-![Front Screen](./assets/pwd_app)
+![Front Page](./assets/hallo)
+
 
 ## Link to application
 
@@ -13,6 +13,8 @@ This is a timed quizzed game that stores high scores and compares it with other 
 
 ## Credit
 
+Brennan Predmore TA
+Priya Garg
 
 
 
