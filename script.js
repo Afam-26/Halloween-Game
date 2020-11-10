@@ -10,13 +10,14 @@ var btnOneEl = document.querySelector("#btn-1");
 var btnTwoEl = document.querySelector("#btn-2");
 var btnThreeEl = document.querySelector("#btn-3");
 var btnFourEl = document.querySelector("#btn-4");
-var hideConEl = document.querySelector("hideCon");
-var highScoreEl = document.querySelector("highScore");
-var submitBtn = document.querySelector("submit-btn")
+var hideConEl = document.querySelector("#hideCon");
+var highScoreEl = document.querySelector("#highScore");
+var submitBtn = document.querySelector("#submit-btn")
 
 var currentPosition = 0;
 var secondsLeft = 60;
 var display;
+
 
 
 
@@ -143,23 +144,23 @@ function nextQuestion() {
 
 // Highscores storage section
 
-startBtnEl.addEventListener("submit", function(event){
+submitBtn.addEventListener("click", function(event){
+    console.log("Got in here")
     event.preventDefault();
     var initials = document.querySelector("#userInitials").value;
-    localStorage.setItem(initials, timer);
-    displayScores;
-
+    window.localStorage.setItem("scores", JSON.stringify({"userInitials": initials, "timerScore": secondsLeft}));
+    displayScores();
+    
 });
 
 
 ShowEl.addEventListener("click", displayScores);
 function displayScores(){
-    document.getElementById("#highscore").style.display = "block";
+    document.getElementById("highScore").style.display = "block";
     Object.keys(localStorage).forEach(function (key) {
         console.log(localStorage.getItem(key));
-
         var li = document.createElement("li");
-        li.textContent = key + "-" + localStorage.getItem(key);
+        li.textContent = key.timerScore + "-" + localStorage.getItem(key).timerScore;
         document.querySelector("#scores").appendChild(li);
     });
 
