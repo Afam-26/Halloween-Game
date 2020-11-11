@@ -145,7 +145,6 @@ function nextQuestion() {
 // Highscores storage section
 
 submitBtn.addEventListener("click", function(event){
-    console.log("Got in here")
     event.preventDefault();
     var initials = document.querySelector("#userInitials").value;
     window.localStorage.setItem("scores", JSON.stringify({"userInitials": initials, "timerScore": secondsLeft}));
@@ -156,11 +155,12 @@ submitBtn.addEventListener("click", function(event){
 
 ShowEl.addEventListener("click", displayScores);
 function displayScores(){
+    document.getElementById("hideCon").style.display = "none"
     document.getElementById("highScore").style.display = "block";
     Object.keys(localStorage).forEach(function (key) {
         console.log(localStorage.getItem(key));
         var li = document.createElement("li");
-        li.textContent = key.timerScore + "-" + localStorage.getItem(key).timerScore;
+       li.textContent = key + "-" + localStorage.getItem(key);
         document.querySelector("#scores").appendChild(li);
     });
 
