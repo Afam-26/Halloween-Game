@@ -143,23 +143,22 @@ function nextQuestion() {
 
 // Highscores storage section
 
-startBtnEl.addEventListener("submit", function(event){
+submitBtn.addEventListener("click", function(event){
     event.preventDefault();
     var initials = document.querySelector("#userInitials").value;
-    localStorage.setItem(initials, timer);
-    displayScores;
-
+    window.localStorage.setItem("scores", JSON.stringify({"userInitials": initials, "timerScore": secondsLeft}));
+    displayScores();
+    
 });
-
 
 ShowEl.addEventListener("click", displayScores);
 function displayScores(){
-    document.getElementById("#highscore").style.display = "block";
+    document.getElementById("hideCon").style.display = "none"
+    document.getElementById("highScore").style.display = "block";
     Object.keys(localStorage).forEach(function (key) {
         console.log(localStorage.getItem(key));
-
         var li = document.createElement("li");
-        li.textContent = key + "-" + localStorage.getItem(key);
+       li.textContent = key + "-" + localStorage.getItem(key);
         document.querySelector("#scores").appendChild(li);
     });
 
