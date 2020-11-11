@@ -1,28 +1,26 @@
-var questionCon = document.querySelector("#question-container");
-var timeEl = document.querySelector("#time");
-var ShowEl = document.querySelector("#show")
-var istruEl = document.querySelector("#instru");
-var startBtnEl = document.querySelector("#start-btn");
-var quizEl = document.querySelector("#quiz");
-var hideEl = document.querySelector(".hide");
-var quizFirstEl = document.querySelector("#quizFirst");
-var btnOneEl = document.querySelector("#btn-1");
-var btnTwoEl = document.querySelector("#btn-2");
-var btnThreeEl = document.querySelector("#btn-3");
-var btnFourEl = document.querySelector("#btn-4");
-var hideConEl = document.querySelector("#hideCon");
-var highScoreEl = document.querySelector("#highScore");
-var submitBtn = document.querySelector("#submit-btn")
+let questionCon = document.querySelector("#question-container");
+let timeEl = document.querySelector("#time");
+let ShowEl = document.querySelector("#show")
+let istruEl = document.querySelector("#instru");
+let startBtnEl = document.querySelector("#start-btn");
+let quizEl = document.querySelector("#quiz");
+let hideEl = document.querySelector(".hide");
+let quizFirstEl = document.querySelector("#quizFirst");
+let btnOneEl = document.querySelector("#btn-1");
+let btnTwoEl = document.querySelector("#btn-2");
+let btnThreeEl = document.querySelector("#btn-3");
+let btnFourEl = document.querySelector("#btn-4");
+let hideConEl = document.querySelector("#hideCon");
+let highScoreEl = document.querySelector("#highScore");
+let clearHighEl = document.querySelector("clear-high")
+let submitBtn = document.querySelector("#submit-btn")
 
-var currentPosition = 0;
-var secondsLeft = 60;
-var display;
-
-
-
+let currentPosition = 0;
+let secondsLeft = 60;
+let display;
 
 // Question and answers section in array
-var questions = [
+let questions = [
 
     {
         question: "Commonly used data types DO NOT include?",
@@ -44,7 +42,7 @@ var questions = [
     },
 
     {
-        question: "String values must be enclosed within ------ when being assigned to variable",
+        question: "String values must be enclosed within ------ when being assigned to letiable",
         options: ["Commas", "curybracket", "quotes", "parenthesis"],
         ans: "parenthesis",
     },
@@ -71,11 +69,11 @@ function startQuiz() {
     document.getElementById("instru").style.display = "none";
     document.getElementById("quiz").style.display = ""
    
-     var timerInterval = setInterval(function() { 
-        timeEl.textContent=secondsLeft;
+     let timerInterval = setInterval(function() { 
+        timeEl.textContent = secondsLeft;
         secondsLeft--;
      
-        if(secondsLeft < 0) {
+        if(secondsLeft = 0) {
            
             clearInterval(timerInterval);
             timeEl.textContent = "Game over";
@@ -102,6 +100,7 @@ btnOneEl.addEventListener("click", checkAns);
 btnTwoEl.addEventListener("click", checkAns);
 btnThreeEl.addEventListener("click", checkAns);
 btnFourEl.addEventListener("click", checkAns);
+
 
 function checkAns(event) {
     if(event.target.innerHTML === questions[currentPosition].ans)
@@ -146,12 +145,11 @@ function nextQuestion() {
 
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
-    var initials = document.querySelector("#userInitials").value;
+    let initials = document.querySelector("#userInitials").value;
     window.localStorage.setItem("scores", JSON.stringify({"userInitials": initials, "timerScore": secondsLeft}));
     displayScores();
     
 });
-
 
 ShowEl.addEventListener("click", displayScores);
 function displayScores(){
@@ -159,7 +157,7 @@ function displayScores(){
     document.getElementById("highScore").style.display = "block";
     Object.keys(localStorage).forEach(function (key) {
         console.log(localStorage.getItem(key));
-        var li = document.createElement("li");
+        let li = document.createElement("li");
        li.textContent = key + "-" + localStorage.getItem(key);
         document.querySelector("#scores").appendChild(li);
     });
@@ -167,18 +165,30 @@ function displayScores(){
     
 }
 
+
 // End Game function
 
 function quizEnd() {
     
     clearInterval(timerInterval);
     console.log("Game Over");
-    var finalScore = document.getElementById("#highScore");
+    let finalScore = document.getElementById("#highScore");
     finalScore.textContent = time 
 
    quizEnd()
     
 }
 
+
+// Section for "Go Back" button
+
+function goBack(){
+    parent.history.back();
+}
+
+clearHighEl.addEventListener("click", clearScore);
+function clearScore(){
+    clearInterval(document.getElementById("#highScore"));
+}
 
     
