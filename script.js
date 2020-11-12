@@ -12,12 +12,12 @@ let btnThreeEl = document.querySelector("#btn-3");
 let btnFourEl = document.querySelector("#btn-4");
 let hideConEl = document.querySelector("#hideCon");
 let highScoreEl = document.querySelector("#highScore");
-let clearHighEl = document.querySelector("clear-high")
+let clearHighEl = document.querySelector("#clear-high")
 let submitBtn = document.querySelector("#submit-btn")
 
 let currentPosition = 0;
 let secondsLeft = 60;
-let display;
+
 
 // Question and answers section in array
 let questions = [
@@ -67,7 +67,7 @@ startBtnEl.addEventListener("click",startQuiz);
 
 function startQuiz() {
     document.getElementById("instru").style.display = "none";
-    document.getElementById("quiz").style.display = ""
+    document.getElementById("quiz").style.display = "flex"
    
      let timerInterval = setInterval(function() { 
         timeEl.textContent = secondsLeft;
@@ -183,12 +183,16 @@ function quizEnd() {
 // Section for "Go Back" button
 
 function goBack(){
-    parent.history.back();
+    document.getElementById("quiz").style.display = "flex"
+    document.getElementById("highScore").style.display = "none"
+    secondsLeft = 60
+    currentPosition = 0
+
 }
 
 clearHighEl.addEventListener("click", clearScore);
 function clearScore(){
-    clearInterval(document.getElementById("#highScore"));
+    document.getElementById("scores").innerHTML = "";
 }
 
     
